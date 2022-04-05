@@ -5,6 +5,8 @@ $(function(){
     $("#startButton").on("click", function(){
         // 如果還沒作答就從這裡開始
         if(currentQuiz==null){
+            // 將選項區清空
+            $("#options").empty();
             // 設定目前作答從第0題開始
             currentQuiz = 0;
             // 顯示題目
