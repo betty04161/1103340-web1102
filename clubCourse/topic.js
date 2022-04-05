@@ -5,8 +5,7 @@ var topic = [
     "隨機性",
     "重複性",
     "條件判斷",
-    "迴圈",
-    "函式"
+    "迴圈"
 ];
 var startDate = new Date();
 // debugger;
@@ -16,9 +15,4 @@ function setMonthAndDay(startMonth, startDay){
     startDate.setMinutes(0);
     startDate.setSeconds(0);
 }
-$("#submit").on("click",function(){
-    var date=new Date($(this).val());
-    var d=date.getDate();
-    var m=date.getMonth()+1;
-    setMonthAndDay(d,m);
-});
+setMonthAndDay(2,21);

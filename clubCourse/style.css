@@ -2,10 +2,17 @@ body{
     text-align: center;
 }
 table{
+    border-collapse: collapse;
     width:60%;
     margin: auto;
     font-size: 1.5em; /* px,em,rem */
 }
-td{
+/* td{
     border-bottom: 1px solid rgb(17, 175, 38);
+} */
+th,td{
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #DDD;
 }
+tr:hover{background-color: #D6EEEE;}
