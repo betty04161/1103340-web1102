@@ -1,0 +1,169 @@
+
+
+<html>
+    <head>
+    <title>OXgame</title>
+    </head>
+    <script language="javascript">
+    
+    var turn = 0;
+    var size =5;
+    
+    var a = new Array(size);
+    for(var i = 0; i < size; i++)
+    a[i] = new Array(size);
+    
+    function newg(){
+    	for(var i=0;i<size;i++){
+        	for(var j=0;j<size;j++){
+            	a[i][j]=0;
+            }
+        }
+        document.getElementById("demo").innerHTML=""; 
+    }
+    
+    function chickwin(){
+    	var xu = 0;
+    	for(var i=0;i<=size-3;i++){
+        	for(var j=0;j<=size-1;j++){
+            	if(a[i][j]==1){
+                	if(a[i+1][j]==1&&a[i+2][j]==1){
+                        document.getElementById("demo").innerHTML="You win!"; 
+                        break; 
+                        xu=0;
+                    }
+                }
+                if(a[i][j]==2){
+                	if(a[i+1][j]==2&&a[i+2][j]==2){
+                        document.getElementById("demo").innerHTML="You win!"; 
+                        break; 
+                        xu=0;
+                    }
+                }
+    		}
+            if(xu)break;
+         }
+         xu = 0;
+         for(var i=0;i<=size-1;i++){
+        	for(var j=0;j<=size-3;j++){
+            	if(a[i][j]==1){
+                	if(a[i][j+1]==1&&a[i][j+2]==1){
+                        document.getElementById("demo").innerHTML="You win!"; 
+                        break; 
+                        xu=0;
+                    }
+                }
+                if(a[i][j]==2){
+                	if(a[i][j+1]==2&&a[i][j+2]==2){
+                        document.getElementById("demo").innerHTML="You win!"; 
+                        break; 
+                        xu=0;
+                    }
+                }
+    		}
+            if(xu)break;
+         }
+         xu = 0;
+         for(var i=0;i<=size-3;i++){
+        	for(var j=0;j<=size-3;j++){
+            	if(a[i][j]==1){
+                	if(a[i+1][j+1]==1&&a[i+2][j+2]==1){
+                        document.getElementById("demo").innerHTML="You win!"; 
+                        break; 
+                        xu=0;
+                    }
+                }
+                if(a[i][j]==2){
+                	if(a[i+1][j+1]==2&&a[i+2][j+2]==2){
+                        document.getElementById("demo").innerHTML="You win!"; 
+                        break; 
+                        xu=0;
+                    }
+                }
+    		}
+            if(xu)break;
+         }
+         xu = 0;
+         for(var i=2;i<=size-1;i++){
+        	for(var j=0;j<=size-3;j++){
+            	if(a[i][j]==1){
+                	if(a[i-1][j+1]==1&&a[i-2][j+2]==1){
+                        document.getElementById("demo").innerHTML="You win!"; 
+                        break; 
+                        xu=0;
+                    }
+                }
+                if(a[i][j]==2){
+                	if(a[i-1][j+1]==2&&a[i-2][j+2]==2){
+                        document.getElementById("demo").innerHTML="You win!"; 
+                        break; 
+                        xu=0;
+                    }
+                }
+    		}
+            if(xu)break;
+         }
+      }
+    
+    
+    function put(event){
+        if ((typeof event == "undefined")||(!event))
+            event = window.event;
+        var e1 = event.target || event.srcElement;
+        var x = e1.name.substring(1, 2);
+        var y = e1.name.substring(2, 3);
+         if(a[x][y]!=1&&a[x][y]!=2){
+            if (turn%2==0){
+            e1.innerHTML = "O";
+            turn++;
+            a[x][y]=1;
+            }else{
+            e1.innerHTML = "X";
+            turn++;
+            a[x][y]=2;
+            }	
+        }
+     
+        //alert('now pos, (' + x + ' ,' + y + ')');
+    	chickwin();
+    }
+    
+    
+    
+    function init(){
+       var table = document.createElement("TABLE");
+       document.body.appendChild(table);
+       table.border = "2";
+       table.cellSpacing = "2";
+       table.bgColor = "#eeeeee";
+       table.align="center";	
+       
+       var x, y;
+       
+       for(x=0;x<size;x++){
+        r = table.insertRow(x);
+        for(y=0;y<size;y++){
+            c = r.insertCell(y);
+            c.width="50";
+            c.height="50";
+            c.name='c'+x+y;
+            c.id = c.name;
+            c.vAlign="center";
+            c.align="center";
+            c.onclick = put;
+            //c.innerHTML="aaa";
+            
+            c.appendChild(document.createTextNode(""));
+        }
+       }
+       
+    }
+    
+    </script>
+    
+    <body onLoad="init()">
+    	<button type="button" onclick="newg();init();">New Game</button>
+    	<p id="demo" style="top:500px;"></p>
+    </body>
+    </html>
+    

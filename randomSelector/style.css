@@ -1,0 +1,23 @@
+body{
+    text-align: center;
+    background-color:rgb(253, 219, 247);
+    color:rgb(17, 3, 3);
+}
+li{
+    text-align: left;
+}
+input{
+    border:0;
+    background-color:#6be0f5;
+    color:#fff;
+    border-radius:10px;
+    cursor:pointer;
+    width:150px;
+    height:50px;
+    font-size:  13px;
+}
+input:hover{
+    color:#68e5ee;
+    background-color:#fff;
+    border:2px #62cfeb solid;
+}
