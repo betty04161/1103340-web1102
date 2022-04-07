@@ -19,12 +19,12 @@ $(function(){
         var randomChance = Math.round(Math.random()*100);
 
         // debugger;
-        if(randomChance<20){
+        if(randomChance<40){
             var randomChildNumber = numberOfListItem;
-            console.log("機率20%");
+            console.log("機率40%");
         }else{
             var randomChildNumber = Math.floor(Math.random() * numberOfListItem);
-            console.log("機率80%");
+            console.log("機率60%");
         }
 
         console.log(randomChildNumber);
