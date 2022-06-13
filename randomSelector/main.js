@@ -1,19 +1,5 @@
-// $(function(){
-//     $("input").on("click",function(){
-//         //alert("Hi");
-//         // debugger;
-//         var numberOfListItem=$("li").length;
-//         //floor 取向下整數，random取[0,1)之間的數
-//         var randomChildNumber = Math.floor(Math.random() * numberOfListItem);
-//         console.log(randomChildNumber);
-//         $("h1").text($("li").eq(randomChildNumber).text());
-//     });
-// });
-
 $(function(){
     $("input").on("click",function(){
-        //alert("Hi");
-        //debugger;
         var numberOfListItem=$("li").length - 1;
         //floor 取向下整數，random取[0,1)之間的數
         var randomChance = Math.round(Math.random()*100);
