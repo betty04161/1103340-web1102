@@ -27,16 +27,25 @@
           <td width="20%">{{productClass.name}}</td>
           <td width="20%">US${{productClass.price.toLocaleString('en-US')}}</td>
           <td>
-            <button style="width: 35%" v-if="productClass.earlyBird">
+            <button  @click="showTable1" style="width: 35%"v-if="productClass.earlyBird && productClass.seatsAvailable >= 10">
               Book Earlybird!
             </button>
-            <button style="width: 35%" v-else>Book</button>&nbsp;
+            <button @click="showTable2" style="width: 35%" v-else-if="productClass.earlyBird && productClass.seatsAvailable < 10">Book Earlybird!</button>
+            <button @click="showTable3" style="width: 35%" v-else>Book</button>&nbsp;
             <span v-show="productClass.seatsAvailable < 10" style="color: red">
               Almost Sold out!
             </span>
           </td>
         </tr>
-      </table>
+      </table><br>
+      <!-- <table v-show="showBook">
+        <select v-model="selectedIndex"><option v-for="(x,index) in productType">{{x}}</option></select>
+        Name: <input type="text" v-model="name">
+        Tickets: <input type="number" v-model="tickets" @change="checkTicket">
+        Notes: <input type="text" v-model="notes">
+        <button @click="order">Order</button><br>
+        <span v-show="showHistory" v-for="x in history">{{x}}</span>
+      </table> -->
       <img
         :src="imageSrc[Math.floor(Math.random()*imageSrc.length)]"
         :style="imageStyleController"
