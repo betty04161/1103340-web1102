@@ -15,4 +15,22 @@ th,td{
     text-align: left;
     border-bottom: 1px solid #DDD;
 }
-tr:hover{background-color: #D6EEEE;}
+tr:hover{background-color: #e6f7f8;}
+.st{
+    color: gray;
+}
+.button{
+    border:0;
+    background-color:#6be0f5;
+    color:#fff;
+    border-radius:10px;
+    cursor:pointer;
+    width:150px;
+    height:50px;
+    font-size:  16px;
+}
+.button:hover{
+    color:#68e5ee;
+    background-color:#fff;
+    border:2px #62cfeb solid;
+}
