@@ -5,7 +5,7 @@ $(function(){
         var randomChance = Math.round(Math.random()*100);
 
         // debugger;
-        if(randomChance<40){
+        if(randomChance<33){
             var randomChildNumber = numberOfListItem;
             console.log("機率40%");
         }else{
